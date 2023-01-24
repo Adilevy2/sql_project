@@ -24,7 +24,7 @@ router.post('/',auth,async(req,res)=>{
         return res.send('done')
     } 
     catch(error){
-        res.sendStatus(error)
+        return res.sendStatus(error)
     }
     
 

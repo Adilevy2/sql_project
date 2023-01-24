@@ -24,7 +24,7 @@ router.post('/',async(req,res)=>{
         return res.send(token).status(200)
     }
     catch(error){
-        res.sendStatus(error)
+        return res.sendStatus(error)
     }
     
 })

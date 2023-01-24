@@ -32,7 +32,7 @@ router.post('/',async(req,res)=>{
         return res.send(token).status(201)
     }
     catch(error){
-        res.sendStatus(error)
+        return  res.sendStatus(error)
     }
     
 });

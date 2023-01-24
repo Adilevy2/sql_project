@@ -59,7 +59,7 @@ router.post('/',auth,async(req,res)=>{
   
   }
   catch(error){
-    res.sendStatus(error)
+    return res.sendStatus(error)
 }
 
   
