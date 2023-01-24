@@ -5,8 +5,8 @@ const bcrypt=require('bcrypt')
 const jwt=require('jsonwebtoken')
 
 router.get('/',async(req,res)=>{
-    const query='SELECT * FROM subjects'
     try{
+    const query='SELECT * FROM subjects'
         const result=await User.query(query);
         res.send(result.rows).status(200)
     }

@@ -6,8 +6,8 @@ const jwt=require('jsonwebtoken')
 const auth=require('../middleWear/auth')
 
 router.get('/',async(req,res)=>{
-    const query='SELECT * FROM courses'
     try{
+    const query='SELECT * FROM courses'
         const result=await User.query(query);
         res.send(result.rows).status(200)
     }

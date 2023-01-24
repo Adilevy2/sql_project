@@ -6,6 +6,8 @@ const bcrypt=require('bcrypt');
 
 //change password
 router.post('/',async(req,res)=>{
+  try{
+
     const querySign='UPDATE users SET password = ($1) WHERE email=($2);'
     let queryEmail=`SELECT * from users WHERE email=($1) `
     const email=[req.body.email]
@@ -18,6 +20,11 @@ router.post('/',async(req,res)=>{
       const pas=await bcrypt.hash(req.body.newpassword,salt)
     const resultChange=await User.query(querySign,[pas,req.body.email])
     return res.send('changed').status(200)
+  }   
+  catch(error){
+    res.sendStatus(error)
+}
+
 
 })
 
